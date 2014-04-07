@@ -15,13 +15,10 @@
               {{#if tags}}
                 <li class="post-meta-item">
                   {{#foreach tags}}
-                    <span itemprop="{{#if @first}}articleSection{{else}}keywords{{/if}}">{{name}}</span>
+                    <span itemprop="{{#if @first}}articleSection{{else}}keywords{{/if}}"><a href="{{@blog.url}}/tag/{{name}}">{{name}}</a></span>
                   {{/foreach}}
                 </li>
               {{/if}}
-              <li class="post-meta-item">
-                <a href="#disqus_thread" data-disqus-identifier="{{id}}"></a>
-              </li>
             </ul>
             <h1 itemprop="name headline" class="post-title"><a href="{{url}}" itemprop="url" data-pjax title="{{{title}}}">{{{title}}}</a></h1>
             {{! A subtitle not available in Ghosts yet }}
@@ -82,27 +79,12 @@
         </section>
       {{/post}}
       <section itemprop="comment" class="post-comments">
-        <div id="disqus_thread"></div>
+        <div class="g-comments" data-href="{{@blog.url}}{{url}}" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">Loading Google+ Comments ...</div>
+    <script async type="text/javascript" src="//apis.google.com/js/plusone.js?callback=gpcb"></script>
+    <noscript>Please enable JavaScript to view the <a href="https://plus.google.com/">comments powered by Google+.</a></noscript>
       </section>
     </article>
 
     {{> footer this}}
   </div>
 </section>
-
-<script type="text/javascript">
-  {{> custom/config}}
-
-  {{#post}}
-    var disqus_identifier = '{{id}}';
-  {{/post}}
-
-  if(typeof DISQUS !== 'object') {
-    (function () {
-    var s = document.createElement('script'); s.async = true;
-    s.type = 'text/javascript';
-    s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-  }
-</script>
