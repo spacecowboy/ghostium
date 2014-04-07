@@ -19,9 +19,6 @@
                   {{/foreach}}
                 </li>
               {{/if}}
-              <li class="post-meta-item">
-                <a href="#disqus_thread" data-disqus-identifier="{{id}}"></a>
-              </li>
             </ul>
             <h1 itemprop="name headline" class="post-title"><a href="{{url}}" itemprop="url" data-pjax title="{{{title}}}">{{{title}}}</a></h1>
             {{! A subtitle not available in Ghosts yet }}
@@ -82,7 +79,7 @@
         </section>
       {{/post}}
       <section itemprop="comment" class="post-comments">
-        <div id="disqus_thread"></div>
+        <div id="post_{{id}}_comments"></div>
       </section>
     </article>
 
@@ -91,18 +88,5 @@
 </section>
 
 <script type="text/javascript">
-  {{> custom/config}}
-
-  {{#post}}
-    var disqus_identifier = '{{id}}';
-  {{/post}}
-
-  if(typeof DISQUS !== 'object') {
-    (function () {
-    var s = document.createElement('script'); s.async = true;
-    s.type = 'text/javascript';
-    s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-  }
+(function () {var c = document.getElementById('post_{{id}}_comments'),w = c.offsetWidth; c.innerHTML = '<div class="g-comments" data-href="{{@blog.url}}{{url}}" data-width="' + w + '" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD"></div>';})();
 </script>
