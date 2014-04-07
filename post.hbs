@@ -79,14 +79,12 @@
         </section>
       {{/post}}
       <section itemprop="comment" class="post-comments">
-        <div id="post_{{id}}_comments"></div>
+        <div class="g-comments" data-href="{{@blog.url}}{{url}}" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">Loading Google+ Comments ...</div>
+    <script async type="text/javascript" src="//apis.google.com/js/plusone.js?callback=gpcb"></script>
+    <noscript>Please enable JavaScript to view the <a href="https://plus.google.com/">comments powered by Google+.</a></noscript>
       </section>
     </article>
 
     {{> footer this}}
   </div>
 </section>
-
-<script type="text/javascript">
-(function () {var c = document.getElementById('post_{{id}}_comments'),w = c.offsetWidth; c.innerHTML = '<div class="g-comments" data-href="{{@blog.url}}{{url}}" data-width="' + w + '" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD"></div>';})();
-</script>
