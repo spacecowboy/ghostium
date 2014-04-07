@@ -1,3 +1,12 @@
+# Change made to the theme
+
+- Personal information
+- Remvoed disqus
+- Added Google+ comments
+- Added more languages to Syntax Highlighting
+- Added MathJax for math rendering
+- Tags are now links
+
 # Ghostium [![Build Status](https://travis-ci.org/oswaldoacauan/ghostium.png)](https://travis-ci.org/oswaldoacauan/ghostium) [![Total views](https://sourcegraph.com/api/repos/github.com/oswaldoacauan/ghostium/counters/views.png)](https://sourcegraph.com/github.com/oswaldoacauan/ghostium)
 
 ![Ghostium](http://i.imgur.com/m5VcTBl.png)
