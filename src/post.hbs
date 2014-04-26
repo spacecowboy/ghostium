@@ -14,9 +14,7 @@
               </li>
               {{#if tags}}
                 <li class="post-meta-item">
-                  {{#foreach tags}}
-                    <span itemprop="{{#if @first}}articleSection{{else}}keywords{{/if}}"><a href="{{@blog.url}}/tag/{{name}}">{{name}}</a></span>
-                  {{/foreach}}
+                  {{tags separator=" | "}}
                 </li>
               {{/if}}
             </ul>
